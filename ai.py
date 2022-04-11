@@ -34,7 +34,7 @@ class AI:
 
     # TODO: build a game tree from the current node up to the given depth
     # Note that the current node is already in self.root
-    def build_tree(self, depth=0):
+    def build_tree(self):
         pass
 
     # TODO: expectimax calculation.
