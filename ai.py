@@ -33,20 +33,21 @@ class AI:
     # self.simulator.current_state, self.simulator.set_state, self.simulator.move
 
     # TODO: build a game tree from the current node up to the given depth
+    # Note that the current node is already in self.root
     def build_tree(self, node=None, depth=0, ec=False):
         pass
 
     # TODO: expectimax calculation.
     # Return a (best direction, expectimax value) tuple if node is a MAX_PLAYER
     # Return a (None, expectimax value) tuple if node is a CHANCE_PLAYER
-    def expectimax(self, node = None):
+    def expectimax(self):
         # TODO: delete this random choice but make sure the return type of the function is the same
         return random.randint(0, 3), 0
 
-    # Do not modify this function
+    # Return decision at the root
     def compute_decision(self):
         self.build_tree()
-        direction, _ = self.expectimax(self.root)
+        direction, _ = self.expectimax()
         return direction
 
     # TODO (optional): implement method for extra credits
