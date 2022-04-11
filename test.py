@@ -28,8 +28,8 @@ def test(board_file='test_states', sol_file='test_sols'):
         print("Test {}/{}:".format(i + 1, len(state_lines)))
         game.load_state_line(state_lines[i])
         ai = AI(game.current_state())
-        ai.build_tree()
-        direction, score = ai.expectimax()
+        ai.build_tree(ai.root, ai.search_depth)
+        direction, score = ai.expectimax(ai.root)
 
         sol_direction, sol_score = read_sol_line(sol_lines[i])
 
